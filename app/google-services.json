@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1061233791934",
+    "project_id": "myshoppal-5bbf5",
+    "storage_bucket": "myshoppal-5bbf5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061233791934:android:f28a2bdb51ca2077cddfef",
+        "android_client_info": {
+          "package_name": "com.malash.shopapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1061233791934-bhgp97h0pd57tpl9oo20m8qtlau9401k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.malash.shopapp",
+            "certificate_hash": "c89168eaaa349a89d26d36e7be03e53300d1f08a"
+          }
+        },
+        {
+          "client_id": "1061233791934-331esllkspb3d8u9c1kdm9357u1kpvnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBA1V1IGQ7F5Xi5zDquMzsQneild2S0lo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1061233791934-331esllkspb3d8u9c1kdm9357u1kpvnd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

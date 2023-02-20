@@ -5,12 +5,17 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
 
     <!--App Main Colors -->
     <color name="blue_grey_50">#ECEFF1</color>
-    <color name="blue_grey_500">#607D8B</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="blue_grey_600">#546E7A</color>
+    <color name="blue_grey_800">#37474F</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_700">#616161</color>
+    <color name="grey_900">#212121</color>
+
 
 
 </resources>
