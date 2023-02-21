@@ -23,18 +23,13 @@
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/splash_logo" />
 
-    <TextView
-        android:id="@+id/textView"
+    <com.malash.shopapp.utils.MSPTextViewBoldItalic
+        android:id="@+id/tv_app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:shadowColor="@color/grey_900"
-        android:shadowDx="1.5"
-        android:shadowDy="1.3"
-        android:shadowRadius="1.6"
         android:text="@string/myshoppal"
         android:textColor="@color/white"
         android:textSize="@dimen/splash_title_text_size"
-        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
