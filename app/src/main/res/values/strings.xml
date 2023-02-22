@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">MyShopPal</string>
     <string name="myshoppal">MyShopPal</string>
+    <string name="login">Login</string>
+    <string name="fill_the_input_below">Please fill the input below here</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign up</string>
 </resources>

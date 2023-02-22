@@ -1,12 +1,10 @@
-package com.malash.shopapp
+package com.malash.shopapp.activities
 
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.view.WindowInsets
-import android.view.WindowManager
+import com.malash.shopapp.R
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,9 +14,9 @@ class SplashActivity : AppCompatActivity() {
         //Launch main activity after 4 sec
         @Suppress("DEPRECATION")
         Handler().postDelayed({
-            startActivity(Intent(this,MainActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
-        }, 4200)
+        }, 4160)
 
         /**
         //Set full screen (without status bar)
