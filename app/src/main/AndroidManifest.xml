@@ -14,6 +14,11 @@
         android:theme="@style/Theme.ShopApp"
         tools:targetApi="31">
         <activity
+            android:name=".activities.SignupActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ShopApp.NoActionBar"/>
+        <activity
             android:name=".activities.LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait"
@@ -32,7 +37,7 @@
         <activity
             android:name=".activities.MainActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

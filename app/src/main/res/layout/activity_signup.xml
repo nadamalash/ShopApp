@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_grey_50"
+    tools:context=".activities.SignupActivity">
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/back_btn_margin_top"
+        android:layout_marginStart="@dimen/back_btn_margin_start"
+        android:backgroundTint="@color/blue_grey_50"
+        app:layout_constraintBottom_toTopOf="@+id/tv_create_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/scrollView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back"
+        app:tint="@color/light_grey" />
+
+    <com.malash.shopapp.utils.MSPTextViewBold
+        android:id="@+id/tv_create_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/create_account_margin_top"
+        android:text="@string/create_account"
+        android:textColor="@color/dark_grey"
+        android:textSize="@dimen/login_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back" />
+
+    <com.malash.shopapp.utils.MSPTextView
+        android:id="@+id/tv_fillInput_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:text="@string/fill_the_input_below"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/fill_the_input_below_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_create_account"
+        app:layout_constraintTop_toBottomOf="@+id/tv_create_account" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fillInput_signup"
+      android:layout_marginTop="@dimen/text_margin"
+        app:layout_constraintWidth_percent="0.79">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/et_first_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/first_name"
+                android:padding="0dp"
+                android:textColorHint="@color/light_grey"
+                app:boxCornerRadiusBottomEnd="@dimen/main_btn_radius"
+                app:boxCornerRadiusBottomStart="@dimen/main_btn_radius"
+                app:boxCornerRadiusTopEnd="@dimen/main_btn_radius"
+                app:boxCornerRadiusTopStart="@dimen/main_btn_radius"
+                app:boxStrokeColor="@color/blue_grey_600"
+                app:startIconDrawable="@drawable/ic_user"
+                app:startIconTint="@color/light_grey">
+
+                <com.malash.shopapp.utils.MSPEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="@color/light_grey" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/et_last_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Last Name"
+                android:padding="0dp"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:textColorHint="@color/light_grey"
+                app:boxCornerRadiusBottomEnd="@dimen/main_btn_radius"
+                app:boxCornerRadiusBottomStart="@dimen/main_btn_radius"
+                app:boxCornerRadiusTopEnd="@dimen/main_btn_radius"
+                app:boxCornerRadiusTopStart="@dimen/main_btn_radius"
+                app:boxStrokeColor="@color/blue_grey_600"
+                app:startIconDrawable="@drawable/ic_user"
+                app:startIconTint="@color/light_grey">
+
+                <com.malash.shopapp.utils.MSPEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="@color/light_grey" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/et_email_signup"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                android:padding="0dp"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:textColorHint="@color/light_grey"
+                app:boxCornerRadiusBottomEnd="@dimen/main_btn_radius"
+                app:boxCornerRadiusBottomStart="@dimen/main_btn_radius"
+                app:boxCornerRadiusTopEnd="@dimen/main_btn_radius"
+                app:boxCornerRadiusTopStart="@dimen/main_btn_radius"
+                app:boxStrokeColor="@color/blue_grey_600"
+                app:startIconDrawable="@drawable/ic_email"
+                app:startIconTint="@color/light_grey">
+
+                <com.malash.shopapp.utils.MSPEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="@color/light_grey" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/et_password_signup"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                android:padding="0dp"
+                android:textColorHint="@color/light_grey"
+                app:boxCornerRadiusBottomEnd="@dimen/main_btn_radius"
+                app:boxCornerRadiusBottomStart="@dimen/main_btn_radius"
+                app:boxCornerRadiusTopEnd="@dimen/main_btn_radius"
+                app:boxCornerRadiusTopStart="@dimen/main_btn_radius"
+                app:boxStrokeColor="@color/blue_grey_600"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/light_grey"
+                app:startIconDrawable="@drawable/ic_password"
+                app:startIconTint="@color/light_grey">
+
+                <com.malash.shopapp.utils.MSPEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="@color/light_grey" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/et_password_confirm_signup"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirm_password"
+                android:padding="0dp"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:textColorHint="@color/light_grey"
+                app:boxCornerRadiusBottomEnd="@dimen/main_btn_radius"
+                app:boxCornerRadiusBottomStart="@dimen/main_btn_radius"
+                app:boxCornerRadiusTopEnd="@dimen/main_btn_radius"
+                app:boxCornerRadiusTopStart="@dimen/main_btn_radius"
+                app:boxStrokeColor="@color/blue_grey_600"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/light_grey"
+                app:startIconDrawable="@drawable/ic_password"
+                app:startIconTint="@color/light_grey">
+
+                <com.malash.shopapp.utils.MSPEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="@color/light_grey" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <CheckBox
+        android:id="@+id/checkbox_agree_terms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_agree_terms"
+        app:layout_constraintEnd_toStartOf="@+id/tv_agree_terms"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/scrollView"
+        app:layout_constraintTop_toTopOf="@+id/tv_agree_terms" />
+
+    <com.malash.shopapp.utils.MSPTextView
+        android:id="@+id/tv_agree_terms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/agree_to_terms_margin"
+        android:text="@string/i_agree_to_the"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/forgot_password_text_size"
+        app:layout_constraintEnd_toStartOf="@+id/tv_terms_and_conditions"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_agree_terms"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+
+    <com.malash.shopapp.utils.MSPTextView
+        android:id="@+id/tv_terms_and_conditions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/terms_conditions"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/forgot_password_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_agree_terms"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
+        app:layout_constraintStart_toEndOf="@+id/tv_agree_terms"
+        app:layout_constraintTop_toTopOf="@+id/tv_agree_terms" />
+
+    <com.malash.shopapp.utils.MSPButton
+        android:id="@+id/btn_signup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/agree_to_terms_margin"
+        android:background="@drawable/main_btn"
+        android:text="@string/sign_up"
+        android:textColor="@color/white"
+        android:textSize="@dimen/login_btn_text_size"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="@+id/scrollView"
+        app:layout_constraintTop_toBottomOf="@+id/tv_agree_terms" />
+
+    <com.malash.shopapp.utils.MSPTextView
+        android:id="@+id/tv_have_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/agree_to_terms_margin"
+        android:layout_marginEnd="@dimen/tv_have_account_margin"
+        android:text="@string/have_account"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/forgot_password_text_size"
+        app:layout_constraintEnd_toEndOf="@+id/tv_sign_in"
+        app:layout_constraintEnd_toStartOf="@+id/tv_sign_in"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/btn_signup"
+        app:layout_constraintTop_toBottomOf="@+id/btn_signup" />
+
+    <com.malash.shopapp.utils.MSPTextViewBold
+        android:id="@+id/tv_sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="@string/sign_in"
+        android:textColor="@color/blue_grey_600"
+        android:textSize="@dimen/forgot_password_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_have_account"
+        app:layout_constraintEnd_toEndOf="@+id/btn_signup"
+        app:layout_constraintStart_toEndOf="@+id/tv_have_account"
+        app:layout_constraintTop_toTopOf="@+id/tv_have_account" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
