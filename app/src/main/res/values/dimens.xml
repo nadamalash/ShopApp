@@ -14,5 +14,5 @@
     <dimen name="back_btn_margin_start">-20dp</dimen>
     <dimen name="create_account_margin_top">30dp</dimen>
     <dimen name="agree_to_terms_margin">24dp</dimen>
-    <dimen name="root_padding">25dp</dimen>
+    <dimen name="root_padding">30dp</dimen>
 </resources>
