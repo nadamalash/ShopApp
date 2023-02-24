@@ -66,22 +66,14 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/et_first_name"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/MSPTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/first_name"
-                android:padding="0dp"
-                android:textColorHint="@color/light_grey"
-                app:boxCornerRadiusBottomEnd="@dimen/main_btn_radius"
-                app:boxCornerRadiusBottomStart="@dimen/main_btn_radius"
-                app:boxCornerRadiusTopEnd="@dimen/main_btn_radius"
-                app:boxCornerRadiusTopStart="@dimen/main_btn_radius"
-                app:boxStrokeColor="@color/blue_grey_600"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:startIconDrawable="@drawable/ic_user"
-                app:startIconTint="@color/light_grey">
+                app:startIconDrawable="@drawable/ic_user">
 
                 <com.malash.shopapp.utils.MSPEditText
                     android:layout_width="match_parent"
@@ -92,23 +84,15 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/et_last_name"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/MSPTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Last Name"
-                android:padding="0dp"
                 android:layout_marginTop="@dimen/normal_margin"
-                android:textColorHint="@color/light_grey"
-                app:boxCornerRadiusBottomEnd="@dimen/main_btn_radius"
-                app:boxCornerRadiusBottomStart="@dimen/main_btn_radius"
-                app:boxCornerRadiusTopEnd="@dimen/main_btn_radius"
-                app:boxCornerRadiusTopStart="@dimen/main_btn_radius"
-                app:boxStrokeColor="@color/blue_grey_600"
                 app:layout_constraintTop_toBottomOf="@+id/et_first_name"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:startIconDrawable="@drawable/ic_user"
-                app:startIconTint="@color/light_grey">
+                app:startIconDrawable="@drawable/ic_user">
 
                 <com.malash.shopapp.utils.MSPEditText
                     android:layout_width="match_parent"
@@ -119,23 +103,15 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/et_email_signup"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/MSPTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email"
-                android:padding="0dp"
                 android:layout_marginTop="@dimen/normal_margin"
-                android:textColorHint="@color/light_grey"
-                app:boxCornerRadiusBottomEnd="@dimen/main_btn_radius"
-                app:boxCornerRadiusBottomStart="@dimen/main_btn_radius"
-                app:boxCornerRadiusTopEnd="@dimen/main_btn_radius"
-                app:boxCornerRadiusTopStart="@dimen/main_btn_radius"
-                app:boxStrokeColor="@color/blue_grey_600"
                 app:layout_constraintTop_toBottomOf="@+id/et_last_name"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:startIconDrawable="@drawable/ic_email"
-                app:startIconTint="@color/light_grey">
+                app:startIconDrawable="@drawable/ic_email">
 
                 <com.malash.shopapp.utils.MSPEditText
                     android:layout_width="match_parent"
@@ -146,22 +122,13 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/et_password_signup"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/MSPTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_marginTop="@dimen/normal_margin"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
-                android:padding="0dp"
-                android:textColorHint="@color/light_grey"
-                app:boxCornerRadiusBottomEnd="@dimen/main_btn_radius"
-                app:boxCornerRadiusBottomStart="@dimen/main_btn_radius"
-                app:boxCornerRadiusTopEnd="@dimen/main_btn_radius"
-                app:boxCornerRadiusTopStart="@dimen/main_btn_radius"
-                app:boxStrokeColor="@color/blue_grey_600"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/light_grey"
                 app:startIconDrawable="@drawable/ic_password"
-                app:startIconTint="@color/light_grey"
                 app:layout_constraintTop_toBottomOf="@+id/et_email_signup"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
@@ -175,22 +142,13 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/et_password_confirm_signup"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/MSPTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/confirm_password"
-                android:padding="0dp"
                 android:layout_marginTop="@dimen/normal_margin"
-                android:textColorHint="@color/light_grey"
-                app:boxCornerRadiusBottomEnd="@dimen/main_btn_radius"
-                app:boxCornerRadiusBottomStart="@dimen/main_btn_radius"
-                app:boxCornerRadiusTopEnd="@dimen/main_btn_radius"
-                app:boxCornerRadiusTopStart="@dimen/main_btn_radius"
-                app:boxStrokeColor="@color/blue_grey_600"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/light_grey"
                 app:startIconDrawable="@drawable/ic_password"
-                app:startIconTint="@color/light_grey"
                 app:layout_constraintTop_toBottomOf="@+id/et_password_signup"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
@@ -243,10 +201,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/agree_to_terms_margin"
-        android:background="@drawable/main_btn"
+        style="@style/MainButton"
         android:text="@string/sign_up"
-        android:textColor="@color/white"
-        android:textSize="@dimen/login_btn_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_agree_terms" />

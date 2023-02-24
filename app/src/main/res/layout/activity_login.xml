@@ -62,23 +62,14 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_email_login"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/MSPTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/email"
-        android:padding="0dp"
-        android:textColorHint="@color/light_grey"
-        app:boxCornerRadiusBottomEnd="@dimen/main_btn_radius"
-        app:boxCornerRadiusBottomStart="@dimen/main_btn_radius"
-        app:boxCornerRadiusTopEnd="@dimen/main_btn_radius"
-        app:boxCornerRadiusTopStart="@dimen/main_btn_radius"
-        app:boxStrokeColor="@color/blue_grey_600"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:startIconDrawable="@drawable/ic_email"
-        app:startIconTint="@color/light_grey">
+        app:startIconDrawable="@drawable/ic_email">
 
         <com.malash.shopapp.utils.MSPEditText
             android:layout_width="match_parent"
@@ -89,26 +80,16 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_password_login"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/MSPTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/normal_margin"
         android:hint="@string/password"
-        android:padding="0dp"
-        android:textColorHint="@color/light_grey"
-        app:boxCornerRadiusBottomEnd="@dimen/main_btn_radius"
-        app:boxCornerRadiusBottomStart="@dimen/main_btn_radius"
-        app:boxCornerRadiusTopEnd="@dimen/main_btn_radius"
-        app:boxCornerRadiusTopStart="@dimen/main_btn_radius"
-        app:boxStrokeColor="@color/blue_grey_600"
         app:endIconMode="password_toggle"
-        app:endIconTint="@color/light_grey"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintTop_toBottomOf="@+id/et_email_login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:startIconDrawable="@drawable/ic_password"
-        app:startIconTint="@color/light_grey">
+        app:startIconDrawable="@drawable/ic_password">
 
         <com.malash.shopapp.utils.MSPEditText
             android:layout_width="match_parent"
@@ -135,10 +116,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/agree_to_terms_margin"
-        android:background="@drawable/main_btn"
+        style="@style/MainButton"
         android:text="@string/login"
-        android:textColor="@color/white"
-        android:textSize="@dimen/login_btn_text_size"
         app:layout_constraintEnd_toEndOf="@+id/et_password_login"
         app:layout_constraintStart_toStartOf="@+id/et_password_login"
         app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password" />
