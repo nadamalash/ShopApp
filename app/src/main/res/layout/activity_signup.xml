@@ -226,7 +226,6 @@
         android:id="@+id/tv_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:foreground="?android:attr/selectableItemBackground"
         android:text="@string/sign_in"
         android:textColor="@color/blue_grey_600"
         android:textSize="@dimen/forgot_password_text_size"

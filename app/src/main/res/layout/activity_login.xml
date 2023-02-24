@@ -144,7 +144,6 @@
         android:text="@string/sign_up"
         android:textColor="@color/blue_grey_600"
         android:textSize="@dimen/forgot_password_text_size"
-        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="@+id/dont_have_account"
         app:layout_constraintEnd_toEndOf="@+id/btn_login"
         app:layout_constraintStart_toEndOf="@+id/dont_have_account"
