@@ -11,8 +11,22 @@
     <string name="create_account">Create Account</string>
     <string name="first_name">First Name</string>
     <string name="confirm_password">Confirm Password</string>
-    <string name="have_account">Already have an account?</string>
+    <string name="have_account">Already have an account?\u0020</string>
     <string name="sign_in">Sign in</string>
     <string name="terms_conditions"><u><![CDATA[Terms & Conditions]]></u></string>
     <string name="i_agree_to_the">I Agree To The\u0020</string>
+
+    <!-- Error Messages-->
+    <string name="enter_first_name">*Please enter your first name.</string>
+    <string name="enter_last_name">*Please enter your last name.</string>
+    <string name="enter_email">*Please enter your email.</string>
+    <string name="enter_password">*Please enter your password.</string>
+    <string name="enter_confirm_password">*Please enter password confirmation.</string>
+    <string name="password_and_confirm_password_mismatch">*Password and confirm password don\'t match.</string>
+    <string name="agree_terms_and_conditions">*Please agree terms and conditions.</string>
+    <string name="register_successfully">Registration successful!</string>
+
+
+
+
 </resources>

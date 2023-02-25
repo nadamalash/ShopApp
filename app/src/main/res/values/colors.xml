@@ -9,6 +9,8 @@
     <color name="light_grey">#757575</color>
     <color name="dark_grey">#616161</color>
 
-
+    <!--SnackBar Colors -->
+    <color name="error">#CE6678</color>
+    <color name="success">#43A047</color>
 
 </resources>

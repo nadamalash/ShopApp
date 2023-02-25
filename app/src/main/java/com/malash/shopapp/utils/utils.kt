@@ -3,9 +3,13 @@ package com.malash.shopapp.utils
 import android.content.Context
 import android.graphics.Typeface
 import android.os.Build
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import com.google.android.material.snackbar.Snackbar
+import com.malash.shopapp.R
 
 //Function to create Typeface ('Montserrat')
 fun createTypeface(context: Context, fontStyle: String): Typeface =
@@ -22,4 +26,20 @@ fun hideStatusBar(activity: AppCompatActivity) {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
     }
+}
+
+//Function to show error when required input is empty
+fun showErrorSnackBar(message: String, isError: Boolean, view: View,activity:AppCompatActivity) {
+    val snackBar = Snackbar.make(
+        view,
+        message,
+        Snackbar.LENGTH_LONG
+    )
+    snackBar.setTextColor(ContextCompat.getColor(activity, R.color.white))
+    val snackBarView = snackBar.view
+    if (isError)
+        snackBarView.setBackgroundColor(ContextCompat.getColor(activity, R.color.error))
+    else
+        snackBarView.setBackgroundColor(ContextCompat.getColor(activity, R.color.success))
+    snackBar.show()
 }

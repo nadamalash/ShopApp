@@ -8,7 +8,7 @@ import android.widget.TextView
 import com.malash.shopapp.R
 
 class LoginActivity : AppCompatActivity() {
-    lateinit var signUpTv: TextView
+ private lateinit var signUpTv: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
