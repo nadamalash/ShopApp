@@ -24,7 +24,8 @@
     <string name="enter_confirm_password">*Please enter password confirmation.</string>
     <string name="password_and_confirm_password_mismatch">*Password and confirm password don\'t match.</string>
     <string name="agree_terms_and_conditions">*Please agree terms and conditions.</string>
-    <string name="register_successfully">Registration successful!</string>
+    <string name="register_successful">Registration successful!</string>
+    <string name="register_failed">Registration failed!</string>
 
 
 

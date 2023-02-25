@@ -3,6 +3,7 @@ package com.malash.shopapp.utils
 import android.content.Context
 import android.graphics.Typeface
 import android.os.Build
+import android.view.Gravity
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager

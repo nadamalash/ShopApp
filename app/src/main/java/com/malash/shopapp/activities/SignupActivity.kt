@@ -10,6 +10,9 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.malash.shopapp.R
 import com.malash.shopapp.utils.showErrorSnackBar
 
@@ -33,14 +36,16 @@ class SignupActivity : AppCompatActivity() {
     private lateinit var signinTv: TextView
     private lateinit var signupActionBar: Toolbar
 
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
-        initView()
+        initialization()
         addCallbacks()
     }
 
-    private fun initView() {
+    private fun initialization() {
         firstNameTI = findViewById(R.id.ti_first_name)
         lastNameTI = findViewById(R.id.ti_last_name)
         emailTI = findViewById(R.id.ti_email_signup)
@@ -59,6 +64,8 @@ class SignupActivity : AppCompatActivity() {
         signupBtn = findViewById(R.id.btn_signup)
         signinTv = findViewById(R.id.tv_sign_in)
         signupActionBar = findViewById(R.id.action_bar_signup)
+
+        auth = Firebase.auth
     }
 
     private fun addCallbacks() {
@@ -70,11 +77,11 @@ class SignupActivity : AppCompatActivity() {
             onBackPressed()
         }
         signupBtn.setOnClickListener {
-            validateRegisterDetails(it)
+            registerUser(it)
         }
     }
 
-    private fun validateRegisterDetails(view:View){
+    private fun validateRegisterDetails(): Boolean {
         var isValid = true
 
         //First Name
@@ -113,7 +120,7 @@ class SignupActivity : AppCompatActivity() {
         if (TextUtils.isEmpty(passwordConfirmEt.text.toString().trim { it <= ' ' })) {
             passwordConfirmTI.error = resources.getString(R.string.enter_confirm_password)
             isValid = false
-        } else if (passwordEt.text.toString() != passwordConfirmEt.text.toString()) {
+        } else if (passwordEt.text.toString().trim { it <= ' ' } != passwordConfirmEt.text.toString().trim { it <= ' ' }) {
             passwordConfirmTI.error =
                 resources.getString(R.string.password_and_confirm_password_mismatch)
             isValid = false
@@ -128,9 +135,32 @@ class SignupActivity : AppCompatActivity() {
         } else {
             agreeTermsErrorTv.visibility = View.INVISIBLE
         }
-        //If is valid
-        if (isValid){
-            showErrorSnackBar(resources.getString(R.string.register_successfully),false,view,this@SignupActivity )
+
+        return isValid
+    }
+
+    private fun registerUser(view:View) {
+        //Check if the entries are valid or not
+        if (validateRegisterDetails()) {
+            val email = emailEt.text.toString().trim { it <= ' ' }
+            val password = passwordEt.text.toString().trim { it <= ' ' }
+
+            //Create an instance and create a register for a user with email and password
+            auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Registration success, update UI with the signed-in user's information
+                        showErrorSnackBar(resources.getString(R.string.register_successful),false,view,this@SignupActivity )
+                       //Firebase registered user
+                        val user = auth.currentUser
+
+                       // updateUI(user)
+                    } else {
+                        // If registration fails, display a message to the user
+                        showErrorSnackBar(resources.getString(R.string.register_failed),true,view,this@SignupActivity )
+                      //  updateUI(null)
+                    }
+                }
         }
     }
 }
