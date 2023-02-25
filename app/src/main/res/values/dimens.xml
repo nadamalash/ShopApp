@@ -16,4 +16,12 @@
     <dimen name="agree_to_terms_margin">15dp</dimen>
     <dimen name="root_padding">30dp</dimen>
     <dimen name="error_msg_text_size">13sp</dimen>
+    <dimen name="progress_dialog_content_padding">10dp</dimen>
+    <dimen name="progress_bar_size">50dp</dimen>
+    <dimen name="progress_text_margin_start">16dp</dimen>
+    <dimen name="progress_text_size">16sp</dimen>
+
+
+
+
 </resources>

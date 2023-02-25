@@ -1,5 +1,6 @@
 package com.malash.shopapp.utils
 
+import android.app.Dialog
 import android.content.Context
 import android.graphics.Typeface
 import android.os.Build
@@ -29,8 +30,8 @@ fun hideStatusBar(activity: AppCompatActivity) {
     }
 }
 
-//Function to show error when required input is empty
-fun showErrorSnackBar(message: String, isError: Boolean, view: View,activity:AppCompatActivity) {
+//Function to show snac kbar
+fun showErrorSnackBar(message: String, isError: Boolean, view: View, activity: AppCompatActivity) {
     val snackBar = Snackbar.make(
         view,
         message,
@@ -44,3 +45,14 @@ fun showErrorSnackBar(message: String, isError: Boolean, view: View,activity:App
         snackBarView.setBackgroundColor(ContextCompat.getColor(activity, R.color.success))
     snackBar.show()
 }
+
+//Function to show progress dialog
+fun progressDialog(activity: AppCompatActivity): Dialog {
+    val dialog = Dialog(activity)
+    //Set the screen content from layout resources
+    dialog.setContentView(R.layout.dialog_progress)
+
+    dialog.setCancelable(false)
+    dialog.setCanceledOnTouchOutside(false)
+return dialog}
+

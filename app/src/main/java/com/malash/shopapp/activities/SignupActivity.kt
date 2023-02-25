@@ -1,5 +1,6 @@
 package com.malash.shopapp.activities
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -15,6 +16,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.malash.shopapp.R
 import com.malash.shopapp.utils.showErrorSnackBar
+import com.malash.shopapp.utils.progressDialog
 
 class SignupActivity : AppCompatActivity() {
     private lateinit var firstNameTI: TextInputLayout
@@ -37,7 +39,7 @@ class SignupActivity : AppCompatActivity() {
     private lateinit var signupActionBar: Toolbar
 
     private lateinit var auth: FirebaseAuth
-
+    private lateinit var progressDialog: Dialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
@@ -66,6 +68,7 @@ class SignupActivity : AppCompatActivity() {
         signupActionBar = findViewById(R.id.action_bar_signup)
 
         auth = Firebase.auth
+        progressDialog = progressDialog(this@SignupActivity)
     }
 
     private fun addCallbacks() {
@@ -120,7 +123,9 @@ class SignupActivity : AppCompatActivity() {
         if (TextUtils.isEmpty(passwordConfirmEt.text.toString().trim { it <= ' ' })) {
             passwordConfirmTI.error = resources.getString(R.string.enter_confirm_password)
             isValid = false
-        } else if (passwordEt.text.toString().trim { it <= ' ' } != passwordConfirmEt.text.toString().trim { it <= ' ' }) {
+        } else if (passwordEt.text.toString()
+                .trim { it <= ' ' } != passwordConfirmEt.text.toString().trim { it <= ' ' }
+        ) {
             passwordConfirmTI.error =
                 resources.getString(R.string.password_and_confirm_password_mismatch)
             isValid = false
@@ -139,26 +144,43 @@ class SignupActivity : AppCompatActivity() {
         return isValid
     }
 
-    private fun registerUser(view:View) {
+    private fun registerUser(view: View) {
         //Check if the entries are valid or not
         if (validateRegisterDetails()) {
             val email = emailEt.text.toString().trim { it <= ' ' }
             val password = passwordEt.text.toString().trim { it <= ' ' }
 
+            //Show progress dialog when entries are valid
+            progressDialog.show()
+
             //Create an instance and create a register for a user with email and password
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
+
+                    //Hide progress dialog if registration is successful or not
+                    progressDialog.dismiss()
+
                     if (task.isSuccessful) {
                         // Registration success, update UI with the signed-in user's information
-                        showErrorSnackBar(resources.getString(R.string.register_successful),false,view,this@SignupActivity )
-                       //Firebase registered user
+                        showErrorSnackBar(
+                            resources.getString(R.string.register_successful),
+                            false,
+                            view,
+                            this@SignupActivity
+                        )
+                        //Firebase registered user
                         val user = auth.currentUser
 
-                       // updateUI(user)
+                        // updateUI(user)
                     } else {
                         // If registration fails, display a message to the user
-                        showErrorSnackBar(resources.getString(R.string.register_failed),true,view,this@SignupActivity )
-                      //  updateUI(null)
+                        showErrorSnackBar(
+                            resources.getString(R.string.register_failed),
+                            true,
+                            view,
+                            this@SignupActivity
+                        )
+                        //  updateUI(null)
                     }
                 }
         }
