@@ -35,7 +35,7 @@ fun showErrorSnackBar(message: String, isError: Boolean, view: View, activity: A
     val snackBar = Snackbar.make(
         view,
         message,
-        Snackbar.LENGTH_LONG
+        Snackbar.LENGTH_SHORT
     )
     snackBar.setTextColor(ContextCompat.getColor(activity, R.color.white))
     val snackBarView = snackBar.view
@@ -54,5 +54,6 @@ fun progressDialog(activity: AppCompatActivity): Dialog {
 
     dialog.setCancelable(false)
     dialog.setCanceledOnTouchOutside(false)
-return dialog}
+    return dialog
+}
 

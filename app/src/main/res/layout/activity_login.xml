@@ -61,7 +61,7 @@
             android:layout_height="match_parent">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/et_email_login"
+        android:id="@+id/ti_email_login"
         style="@style/MSPTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,6 +72,7 @@
         app:startIconDrawable="@drawable/ic_email">
 
         <com.malash.shopapp.utils.MSPEditText
+            android:id="@+id/et_email_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
@@ -79,18 +80,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/et_password_login"
+        android:id="@+id/ti_password_login"
         style="@style/MSPTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/password"
         app:endIconMode="password_toggle"
-        app:layout_constraintTop_toBottomOf="@+id/et_email_login"
+        app:layout_constraintTop_toBottomOf="@+id/ti_email_login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:startIconDrawable="@drawable/ic_password">
 
         <com.malash.shopapp.utils.MSPEditText
+            android:id="@+id/et_password_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -104,10 +106,10 @@
         android:text="@string/forgot_password"
         android:textColor="@color/light_grey"
         android:textSize="@dimen/forgot_password_text_size"
-        app:layout_constraintEnd_toEndOf="@+id/et_password_login"
+        app:layout_constraintEnd_toEndOf="@+id/ti_password_login"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/et_password_login"
-        app:layout_constraintTop_toBottomOf="@+id/et_password_login" />
+        app:layout_constraintStart_toStartOf="@+id/ti_password_login"
+        app:layout_constraintTop_toBottomOf="@+id/ti_password_login" />
 
     <com.malash.shopapp.utils.MSPButton
         android:id="@+id/btn_login"
@@ -116,8 +118,8 @@
         android:layout_marginTop="@dimen/agree_to_terms_margin"
         style="@style/MainButton"
         android:text="@string/login"
-        app:layout_constraintEnd_toEndOf="@+id/et_password_login"
-        app:layout_constraintStart_toStartOf="@+id/et_password_login"
+        app:layout_constraintEnd_toEndOf="@+id/ti_password_login"
+        app:layout_constraintStart_toStartOf="@+id/ti_password_login"
         app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password" />
 
     <com.malash.shopapp.utils.MSPTextView

@@ -1,8 +1,10 @@
 package com.malash.shopapp.activities
 
 import android.app.Dialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.text.TextUtils
 import android.view.View
 import android.widget.Button
@@ -74,10 +76,10 @@ class SignupActivity : AppCompatActivity() {
     private fun addCallbacks() {
 
         signinTv.setOnClickListener {
-            onBackPressed()
+            finish()
         }
         signupActionBar.setNavigationOnClickListener {
-            onBackPressed()
+            finish()
         }
         signupBtn.setOnClickListener {
             registerUser(it)
@@ -168,6 +170,12 @@ class SignupActivity : AppCompatActivity() {
                             view,
                             this@SignupActivity
                         )
+                        //Move to Sign in activity to sign in
+                        FirebaseAuth.getInstance().signOut()
+                       //Back to Login after 2 sec
+                        Handler().postDelayed({
+                            finish()
+                        }, 2000)
                         //Firebase registered user
                         val user = auth.currentUser
 
