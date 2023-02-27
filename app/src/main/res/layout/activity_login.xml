@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/root_padding"
+    android:paddingTop="@dimen/root_padding"
     android:background="@color/blue_grey_50"
     tools:context=".activities.LoginActivity">
 
@@ -16,9 +17,9 @@
         android:scaleType="fitXY"
         android:src="@drawable/login_logo"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.4"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
+        app:layout_constraintHeight_percent="0.43"
+        app:layout_constraintStart_toStartOf="@+id/scrollView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.malash.shopapp.utils.MSPTextViewBold
@@ -29,8 +30,8 @@
         android:textColor="@color/dark_grey"
         android:textSize="@dimen/login_text_size"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/scrollView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <com.malash.shopapp.utils.MSPTextView

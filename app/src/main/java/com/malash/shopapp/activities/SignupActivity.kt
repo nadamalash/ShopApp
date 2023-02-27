@@ -79,7 +79,7 @@ class SignupActivity : AppCompatActivity() {
             finish()
         }
         signupActionBar.setNavigationOnClickListener {
-            finish()
+            onBackPressed()
         }
         signupBtn.setOnClickListener {
             registerUser(it)
@@ -175,7 +175,7 @@ class SignupActivity : AppCompatActivity() {
                        //Back to Login after 2 sec
                         Handler().postDelayed({
                             finish()
-                        }, 2000)
+                        }, 1900)
                         //Firebase registered user
                         val user = auth.currentUser
 
