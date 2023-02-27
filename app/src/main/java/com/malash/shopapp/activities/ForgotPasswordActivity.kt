@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.malash.shopapp.R
+import com.malash.shopapp.utils.backAfterTwoSec
 import com.malash.shopapp.utils.progressDialog
 import com.malash.shopapp.utils.showErrorSnackBar
 
@@ -79,18 +80,16 @@ class ForgotPasswordActivity : AppCompatActivity() {
                     //Hide progress dialog if process is successful or not
                     progressDialog.dismiss()
                     if (task.isSuccessful) {
+                        // If reset successful, display a message to the user
                         showErrorSnackBar(
                             resources.getString(R.string.email_sent_to_reset_password_successfully),
                             false,
                             view,
                             this@ForgotPasswordActivity
                         )
-                        //Back to Login after 2 sec
-                        Handler().postDelayed({
-                            finish()
-                        }, 1900)
+                        backAfterTwoSec(this)
                     } else {
-                        // If registration fails, display a message to the user
+                        // If reset fails, display a message to the user
                         showErrorSnackBar(
                             resources.getString(R.string.email_failed_to_sent),
                             true,

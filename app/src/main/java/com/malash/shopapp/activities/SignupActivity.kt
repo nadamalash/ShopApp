@@ -1,7 +1,6 @@
 package com.malash.shopapp.activities
 
 import android.app.Dialog
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -14,9 +13,13 @@ import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.malash.shopapp.R
+import com.malash.shopapp.firestore.FirestoreClass
+import com.malash.shopapp.models.User
+import com.malash.shopapp.utils.backAfterTwoSec
 import com.malash.shopapp.utils.showErrorSnackBar
 import com.malash.shopapp.utils.progressDialog
 
@@ -163,32 +166,26 @@ class SignupActivity : AppCompatActivity() {
                     progressDialog.dismiss()
 
                     if (task.isSuccessful) {
-                        // Registration success, update UI with the signed-in user's information
-                        showErrorSnackBar(
-                            resources.getString(R.string.register_successful),
-                            false,
-                            view,
-                            this@SignupActivity
-                        )
-                        //Move to Sign in activity to sign in
                         FirebaseAuth.getInstance().signOut()
-                       //Back to Login after 2 sec
-                        Handler().postDelayed({
-                            finish()
-                        }, 1900)
-                        //Firebase registered user
-                        val user = auth.currentUser
 
-                        // updateUI(user)
+                        //Firebase registered user
+                        val firebaseUser = task.result!!.user!!
+                        val user = User(
+                            firebaseUser.uid,
+                            firstNameEt.text.toString().trim { it <= ' ' },
+                            lastNameEt.text.toString().trim { it <= ' ' },
+                            emailEt.text.toString().trim { it <= ' ' },
+                        )
+                        // If email authentication succeed, add data to Firestore
+                        FirestoreClass().inputUserData(user, this@SignupActivity, view)
                     } else {
-                        // If registration fails, display a message to the user
+                        // If email authentication fails, display a message to the user
                         showErrorSnackBar(
                             resources.getString(R.string.register_failed),
                             true,
                             view,
                             this@SignupActivity
                         )
-                        //  updateUI(null)
                     }
                 }
         }

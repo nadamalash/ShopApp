@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.content.Context
 import android.graphics.Typeface
 import android.os.Build
+import android.os.Handler
 import android.view.Gravity
 import android.view.View
 import android.view.WindowInsets
@@ -55,5 +56,12 @@ fun progressDialog(activity: AppCompatActivity): Dialog {
     dialog.setCancelable(false)
     dialog.setCanceledOnTouchOutside(false)
     return dialog
+}
+
+fun backAfterTwoSec(activity: AppCompatActivity) {
+    @Suppress("DEPRECATION")
+    Handler().postDelayed({
+        activity.finish()
+    }, 1900)
 }
 
